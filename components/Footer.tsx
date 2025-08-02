@@ -134,7 +134,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Train a Pro. {t("footer.allRightsReserved")}
           </p>
           <div className="flex items-center space-x-4 mt-4 md:mt-0">
-            <span className="text-slate-400 text-sm">Version: 1.1.6 Under Development by Adi ❤️</span>
+            <span className="text-slate-400 text-sm">Version: 1.1.7 Under Development by Adi ❤️</span>
           </div>
         </motion.div>
       </div>
