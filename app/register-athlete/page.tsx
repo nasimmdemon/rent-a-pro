@@ -48,32 +48,32 @@ export default function RegisterAthletePage() {
   })
 
   const steps = [
-    { number: 1, title: "Personal Information" },
-    { number: 2, title: "Professional Details" },
-    { number: 3, title: "Additional Information" },
-    { number: 4, title: "Review & Submit" },
+    { number: 1, title: t("registerAthlete.steps.step1") },
+    { number: 2, title: t("registerAthlete.steps.step2") },
+    { number: 3, title: t("registerAthlete.steps.step3") },
+    { number: 4, title: t("registerAthlete.steps.step4") },
   ]
 
   const sportsOptions = [
-    "Basketball",
-    "Tennis",
-    "Soccer",
-    "Swimming",
-    "Boxing",
-    "Yoga",
-    "Running",
-    "Golf",
-    "Baseball",
-    "Volleyball",
-    "Football",
-    "Gym Training",
+    t("registerAthlete.sports.basketball"),
+    t("registerAthlete.sports.tennis"),
+    t("registerAthlete.sports.soccer"),
+    t("registerAthlete.sports.swimming"),
+    t("registerAthlete.sports.boxing"),
+    t("registerAthlete.sports.yoga"),
+    t("registerAthlete.sports.running"),
+    t("registerAthlete.sports.golf"),
+    t("registerAthlete.sports.baseball"),
+    t("registerAthlete.sports.volleyball"),
+    t("registerAthlete.sports.football"),
+    t("registerAthlete.sports.gymTraining"),
   ]
 
   const experienceLevels = [
-    { value: "beginner", label: "Beginner" },
-    { value: "intermediate", label: "Intermediate" },
-    { value: "advanced", label: "Advanced" },
-    { value: "professional", label: "Professional" },
+    { value: "beginner", label: t("registerAthlete.experienceLevels.beginner") },
+    { value: "intermediate", label: t("registerAthlete.experienceLevels.intermediate") },
+    { value: "advanced", label: t("registerAthlete.experienceLevels.advanced") },
+    { value: "professional", label: t("registerAthlete.experienceLevels.professional") },
   ]
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, fileType: 'profilePicture' | 'attachments') => {
@@ -124,6 +124,39 @@ export default function RegisterAthletePage() {
   }
 
   const nextStep = () => {
+    // Validate current step before proceeding
+    let isValid = true
+    let missingFields: string[] = []
+
+    switch (currentStep) {
+      case 1:
+        // Personal Information validation
+        if (!formData.firstName?.trim()) missingFields.push("First Name")
+        if (!formData.lastName?.trim()) missingFields.push("Last Name")
+        if (!formData.email?.trim()) missingFields.push("Email")
+        if (!formData.phone?.trim()) missingFields.push("Phone")
+        if (!formData.city?.trim()) missingFields.push("City")
+        break
+      case 2:
+        // Professional Details validation
+        if (!formData.sport_category?.trim()) missingFields.push("Sport Category")
+        if (!formData.experience_level?.trim()) missingFields.push("Experience Level")
+        if (!formData.hourlyRate?.trim()) missingFields.push("Hourly Rate")
+        break
+      case 3:
+        // Additional Information validation
+        if (!formData.bio?.trim()) missingFields.push("Bio")
+        break
+      case 4:
+        // Review step - no validation needed
+        break
+    }
+
+    if (missingFields.length > 0) {
+      alert(`Please fill in all required fields: ${missingFields.join(', ')}`)
+      return
+    }
+
     if (currentStep < 4) {
       setCurrentStep(currentStep + 1)
     }

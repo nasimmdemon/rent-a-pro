@@ -70,23 +70,23 @@ export default function HomePage() {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "Tennis Player",
-      content: "Training with Marcus improved my serve by 40% in just 3 months. Incredible experience!",
+      name: t("testimonials.sarah.name"),
+      role: t("testimonials.sarah.role"),
+      content: t("testimonials.sarah.content"),
       rating: 5,
       image: "/placeholder.svg?height=60&width=60",
     },
     {
-      name: "Mike Chen",
-      role: "Basketball Coach",
-      content: "The webinars are fantastic. I've learned techniques I never knew existed.",
+      name: t("testimonials.mike.name"),
+      role: t("testimonials.mike.role"),
+      content: t("testimonials.mike.content"),
       rating: 5,
       image: "/placeholder.svg?height=60&width=60",
     },
     {
-      name: "Emma Rodriguez",
-      role: "Fitness Enthusiast",
-      content: "Amazing platform! The athletes are professional and really care about your progress.",
+      name: t("testimonials.emma.name"),
+      role: t("testimonials.emma.role"),
+      content: t("testimonials.emma.content"),
       rating: 5,
       image: "/placeholder.svg?height=60&width=60",
     },
@@ -261,7 +261,7 @@ export default function HomePage() {
                   value: filterPrice,
                   setValue: setFilterPrice,
                   isSelect: true,
-                  options: [t("home.anyPrice"), "$50 - $100", "$100 - $200", "$200+"],
+                  options: [t("home.anyPrice"), "€50 - €100", "€100 - €200", "€200+"],
                 },
               ].map((field, index) => (
                 <motion.div

@@ -175,7 +175,7 @@ export default function AthleteProfile() {
                 <div className="flex items-center text-slate-300">
                   <ClockIcon className="w-5 h-5 mr-2 text-purple-400" />
                   <span className="text-2xl font-semibold text-purple-400">
-                    ${athlete.hourly_rate}/hr
+                    €{athlete.hourly_rate}/hr
                   </span>
                 </div>
               </motion.div>

@@ -107,7 +107,7 @@ export default function AthletesPage() {
 
   // Hardcoded as fallback, could be fetched from API sport-categories endpoint
   const sportsOptions = ["", "Football", "Tennis", "Basketball", "Gymnastics", "Athletics", "Swimming"]
-  const priceOptions = ["", "$50 - $100", "$100 - $200", "$200+"]
+  const priceOptions = ["", "€50 - €100", "€100 - €200", "€200+"]
 
   return (
     <motion.div
@@ -232,7 +232,7 @@ export default function AthletesPage() {
                           name: athlete.full_name,
                           sport: athlete.sport_category,
                           location: athlete.location,
-                          price: `$${athlete.hourly_rate}/hr`,
+                          price: `€${athlete.hourly_rate}/hr`,
                           rating: parseFloat(athlete.rating),
                           image: getAthleteImageUrl(athlete.profile_picture),
                           description: athlete.bio,
