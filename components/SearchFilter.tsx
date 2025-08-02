@@ -34,12 +34,12 @@ export default function SearchFilter({ filters, setFilters, sportsOptions, price
     >
       {/* Search Input */}
       <div>
-        <label className="block text-sm font-medium mb-2 text-slate-300">Search</label>
+        <label className="block text-sm font-medium mb-2 text-slate-300">{t("athletesPage.search")}</label>
         <div className="relative">
           <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
           <input
             type="text"
-            placeholder="Search athletes, sports..."
+            placeholder={t("athletesPage.searchPlaceholder")}
             value={filters.search}
             onChange={(e) => handleFilterChange("search", e.target.value)}
             className="w-full pl-10 pr-4 py-3 bg-slate-900/50 border border-slate-600/50 rounded-xl focus:border-purple-500 focus:outline-none transition-all duration-300 backdrop-blur-sm text-white placeholder-slate-400"
@@ -51,7 +51,7 @@ export default function SearchFilter({ filters, setFilters, sportsOptions, price
       <div>
         <label className="block text-sm font-medium mb-2 text-slate-300">
           <TrophyIcon className="w-4 h-4 inline mr-2" />
-          Sport
+          {t("athletesPage.sport")}
         </label>
         <select
           value={filters.sport}
@@ -60,7 +60,7 @@ export default function SearchFilter({ filters, setFilters, sportsOptions, price
         >
           {sportsOptions.map((sport) => (
             <option key={sport} value={sport} className="bg-slate-800">
-              {sport || "All Sports"}
+              {sport || t("athletesPage.allSports")}
             </option>
           ))}
         </select>
@@ -70,11 +70,11 @@ export default function SearchFilter({ filters, setFilters, sportsOptions, price
       <div>
         <label className="block text-sm font-medium mb-2 text-slate-300">
           <MapPinIcon className="w-4 h-4 inline mr-2" />
-          Location
+          {t("athletesPage.location")}
         </label>
         <input
           type="text"
-          placeholder="Enter city or region"
+          placeholder={t("athletesPage.locationPlaceholder")}
           value={filters.location}
           onChange={(e) => handleFilterChange("location", e.target.value)}
           className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600/50 rounded-xl focus:border-purple-500 focus:outline-none transition-all duration-300 backdrop-blur-sm text-white placeholder-slate-400"
@@ -85,7 +85,7 @@ export default function SearchFilter({ filters, setFilters, sportsOptions, price
       <div>
         <label className="block text-sm font-medium mb-2 text-slate-300">
           <DollarSignIcon className="w-4 h-4 inline mr-2" />
-          Price Range
+          {t("athletesPage.priceRange")}
         </label>
         <select
           value={filters.priceRange}
@@ -94,7 +94,7 @@ export default function SearchFilter({ filters, setFilters, sportsOptions, price
         >
           {priceOptions.map((price) => (
             <option key={price} value={price} className="bg-slate-800">
-              {price || "Any Price"}
+              {price || t("athletesPage.anyPrice")}
             </option>
           ))}
         </select>
@@ -107,7 +107,7 @@ export default function SearchFilter({ filters, setFilters, sportsOptions, price
         whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
         className="w-full py-3 text-slate-400 hover:text-purple-400 border border-slate-600/50 hover:border-purple-500/50 rounded-xl transition-all duration-300 font-medium"
       >
-        Clear All Filters
+        {t("athletesPage.clearFilters")}
       </motion.button>
     </motion.div>
   )

@@ -55,10 +55,10 @@ export default function LoginPage() {
               transition={{ delay: shouldReduceMotion ? 0 : 0.2 }}
             >
               <CardTitle className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                Welcome Back
+                {t("login.title")}
               </CardTitle>
               <CardDescription className="text-slate-300 mt-2">
-                Sign in to your account to continue your training journey
+                {t("login.description")}
               </CardDescription>
             </motion.div>
           </CardHeader>
@@ -72,7 +72,7 @@ export default function LoginPage() {
             >
               <motion.div variants={shouldReduceMotion ? reducedMotionFadeIn : fadeInUp} className="space-y-2">
                 <Label htmlFor="email" className="text-slate-200">
-                  Email Address
+                  {t("login.email")}
                 </Label>
                 <div className="relative">
                   <MailIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
@@ -90,7 +90,7 @@ export default function LoginPage() {
 
               <motion.div variants={shouldReduceMotion ? reducedMotionFadeIn : fadeInUp} className="space-y-2">
                 <Label htmlFor="password" className="text-slate-200">
-                  Password
+                  {t("login.password")}
                 </Label>
                 <div className="relative">
                   <LockIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
@@ -99,7 +99,7 @@ export default function LoginPage() {
                     type={showPassword ? "text" : "password"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Enter your password"
+                    placeholder={t("login.passwordPlaceholder")}
                     className="w-full pl-10 pr-12 py-3 bg-slate-900/50 border border-slate-700 text-white placeholder:text-slate-500 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
                     required
                   />
@@ -125,11 +125,11 @@ export default function LoginPage() {
                     className="h-4 w-4 text-purple-600 focus:ring-purple-500 border-slate-600 rounded bg-slate-700"
                   />
                   <label htmlFor="remember-me" className="ml-2 block text-sm text-slate-300">
-                    Remember me
+                    {t("login.rememberMe")}
                   </label>
                 </div>
                 <Link href="/forgot-password" className="text-sm text-purple-400 hover:text-purple-300">
-                  Forgot password?
+                  {t("login.forgotPassword")}
                 </Link>
               </motion.div>
 
@@ -142,10 +142,10 @@ export default function LoginPage() {
                   {isLoading ? (
                     <div className="flex items-center justify-center">
                       <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                      Signing in...
+                      {t("common.loading")}...
                     </div>
                   ) : (
-                    "Sign In"
+                    t("login.signIn")
                   )}
                 </Button>
               </motion.div>
@@ -155,9 +155,9 @@ export default function LoginPage() {
               variants={shouldReduceMotion ? reducedMotionFadeIn : fadeInUp}
               className="text-center text-sm text-slate-400"
             >
-              Don't have an account?{" "}
+              {t("login.noAccount")}{" "}
               <Link href="/register-athlete" className="text-purple-400 hover:text-purple-300 font-medium">
-                Sign up now
+                {t("login.registerNow")}
               </Link>
             </motion.div>
 

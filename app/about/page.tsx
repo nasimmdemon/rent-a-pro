@@ -21,110 +21,49 @@ export default function AboutPage() {
   const { t } = useLanguage()
   const shouldReduceMotion = useReducedMotion()
 
-  const teamMembers = [
-    {
-      name: "Sarah Johnson",
-      role: "CEO & Founder",
-      description:
-        "Former Olympic swimmer turned entrepreneur, passionate about democratizing access to elite sports training.",
-      image: "/placeholder.svg?height=200&width=200",
-      achievements: ["Olympic Gold Medalist", "Sports Tech Innovator", "Forbes 30 Under 30"],
-    },
-    {
-      name: "Marcus Rodriguez",
-      role: "Head of Athlete Relations",
-      description: "Ex-professional basketball player with 15+ years of coaching experience across multiple sports.",
-      image: "/placeholder.svg?height=200&width=200",
-      achievements: ["NBA Veteran", "Certified Coach", "Youth Development Expert"],
-    },
-    {
-      name: "Emily Chen",
-      role: "Chief Technology Officer",
-      description:
-        "Tech visionary with expertise in AI and machine learning, revolutionizing sports training technology.",
-      image: "/placeholder.svg?height=200&width=200",
-      achievements: ["MIT Graduate", "AI Specialist", "Tech Innovation Award"],
-    },
-    {
-      name: "David Thompson",
-      role: "Head of Operations",
-      description: "Operations expert ensuring seamless experiences for athletes and trainers on our platform.",
-      image: "/placeholder.svg?height=200&width=200",
-      achievements: ["Operations Excellence", "Process Optimization", "Team Leadership"],
-    },
-  ]
+  const teamMembers = t("about.team.members")
 
   const values = [
     {
       icon: <HandshakeIcon className="w-10 h-10 text-pink-400" />,
-      title: "Excellence",
-      description:
-        "We strive for the highest standards in coaching and platform experience, ensuring every interaction exceeds expectations.",
+      title: t("about.values.excellence.title"),
+      description: t("about.values.excellence.description"),
     },
     {
       icon: <UsersIcon className="w-10 h-10 text-purple-400" />,
-      title: "Community",
-      description:
-        "Fostering a supportive and inspiring network where athletes and coaches can learn, grow, and achieve together.",
+      title: t("about.values.community.title"),
+      description: t("about.values.community.description"),
     },
     {
       icon: <LightbulbIcon className="w-10 h-10 text-yellow-400" />,
-      title: "Innovation",
-      description:
-        "Continuously evolving with cutting-edge technology and innovative training methods to stay ahead of the curve.",
+      title: t("about.values.innovation.title"),
+      description: t("about.values.innovation.description"),
     },
     {
       icon: <HeartIcon className="w-10 h-10 text-red-400" />,
-      title: "Passion",
-      description: "Driven by genuine love for sports and helping others achieve their athletic dreams and potential.",
+      title: t("about.values.passion.title"),
+      description: t("about.values.passion.description"),
     },
     {
       icon: <ShieldIcon className="w-10 h-10 text-green-400" />,
-      title: "Trust",
-      description:
-        "Building lasting relationships through transparency, reliability, and consistent delivery of promises.",
+      title: t("about.values.trust.title"),
+      description: t("about.values.trust.description"),
     },
     {
       icon: <ZapIcon className="w-10 h-10 text-blue-400" />,
-      title: "Impact",
-      description: "Creating meaningful change in the lives of athletes and the broader sports community worldwide.",
+      title: t("about.values.impact.title"),
+      description: t("about.values.impact.description"),
     },
   ]
 
   const stats = [
-    { number: "500+", label: "Professional Athletes", icon: <TrophyIcon className="w-6 h-6" /> },
-    { number: "50+", label: "Countries Served", icon: <GlobeIcon className="w-6 h-6" /> },
-    { number: "10K+", label: "Training Sessions", icon: <TargetIcon className="w-6 h-6" /> },
-    { number: "4.9", label: "Average Rating", icon: <StarIcon className="w-6 h-6" /> },
+    { number: "500+", label: t("about.stats.professionalAthletes"), icon: <TrophyIcon className="w-6 h-6" /> },
+    { number: "50+", label: t("about.stats.countriesServed"), icon: <GlobeIcon className="w-6 h-6" /> },
+    { number: "10K+", label: t("about.stats.trainingSessions"), icon: <TargetIcon className="w-6 h-6" /> },
+    { number: "4.9", label: t("about.stats.averageRating"), icon: <StarIcon className="w-6 h-6" /> },
   ]
 
-  const milestones = [
-    {
-      year: "2020",
-      title: "The Beginning",
-      description: "Train a Pro was founded with a vision to connect athletes with world-class trainers globally.",
-    },
-    {
-      year: "2021",
-      title: "First 100 Athletes",
-      description: "Reached our first milestone of 100 verified professional athletes on the platform.",
-    },
-    {
-      year: "2022",
-      title: "Global Expansion",
-      description: "Expanded to 25+ countries, making elite training accessible to athletes worldwide.",
-    },
-    {
-      year: "2023",
-      title: "10K Sessions",
-      description: "Celebrated 10,000 successful training sessions and launched advanced analytics features.",
-    },
-    {
-      year: "2024",
-      title: "AI Integration",
-      description: "Introduced AI-powered matching and personalized training recommendations.",
-    },
-  ]
+  const milestones = t("about.journey.milestones")
 
   return (
     <motion.div
@@ -147,11 +86,10 @@ export default function AboutPage() {
               <SparklesIcon className="w-16 h-16 text-purple-400" />
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-              About Train a Pro
+              {t("about.title")}
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-              We're on a mission to democratize access to world-class sports training, connecting passionate athletes
-              with elite professionals who can help them reach their full potential.
+              {t("about.description")}
             </p>
           </motion.div>
         </div>
@@ -199,23 +137,20 @@ export default function AboutPage() {
               transition={{ duration: shouldReduceMotion ? 0.1 : 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Mission</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">{t("about.mission.title")}</h2>
               <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                We believe every athlete deserves access to world-class training, regardless of their location or
-                background. Our platform breaks down geographical barriers and makes elite coaching accessible to anyone
-                with the passion to improve.
+                {t("about.mission.description1")}
               </p>
               <p className="text-lg text-slate-300 leading-relaxed mb-8">
-                By connecting aspiring athletes with professional trainers, we're creating opportunities for growth,
-                learning, and excellence in sports while building a global community of passionate individuals.
+                {t("about.mission.description2")}
               </p>
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
                   <TargetIcon className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-white">Our Goal</h3>
-                  <p className="text-slate-400">Empower 1 million athletes by 2030</p>
+                  <h3 className="font-semibold text-white">{t("about.mission.goal")}</h3>
+                  <p className="text-slate-400">{t("about.mission.goalDescription")}</p>
                 </div>
               </div>
             </motion.div>
@@ -247,9 +182,9 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Values</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{t("about.values.title")}</h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              The principles that guide everything we do and shape our culture
+              {t("about.values.subtitle")}
             </p>
           </motion.div>
 
@@ -292,9 +227,9 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Journey</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{t("about.journey.title")}</h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              From a simple idea to a global platform transforming sports training
+              {t("about.journey.subtitle")}
             </p>
           </motion.div>
 
@@ -349,9 +284,9 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Meet Our Team</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{t("about.team.title")}</h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              The passionate individuals behind Train a Pro, dedicated to your success
+              {t("about.team.subtitle")}
             </p>
           </motion.div>
 
@@ -370,7 +305,7 @@ export default function AboutPage() {
                 className="bg-slate-800/50 backdrop-blur-xl p-6 rounded-2xl border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 group text-center"
               >
                 <motion.img
-                  src={member.image}
+                  src="/placeholder.svg?height=200&width=200"
                   alt={member.name}
                   className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-2 border-purple-500/50 group-hover:border-purple-400 transition-colors duration-300"
                   whileHover={shouldReduceMotion ? {} : { scale: 1.1 }}
@@ -404,10 +339,9 @@ export default function AboutPage() {
             whileInView="animate"
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Join Our Mission</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">{t("about.cta.title")}</h2>
             <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-              Be part of the revolution in sports training. Whether you're an athlete or trainer, there's a place for
-              you in our community.
+              {t("about.cta.subtitle")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
@@ -416,7 +350,7 @@ export default function AboutPage() {
                 whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
                 className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg hover:shadow-purple-500/25 transition-all duration-300 inline-flex items-center justify-center"
               >
-                Start Training
+                {t("about.cta.startTraining")}
               </motion.a>
               <motion.a
                 href="/register-athlete"
@@ -424,7 +358,7 @@ export default function AboutPage() {
                 whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
                 className="border-2 border-purple-500/50 text-purple-400 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-purple-500/10 transition-all duration-300 inline-flex items-center justify-center"
               >
-                Become a Trainer
+                {t("about.cta.becomeTrainer")}
               </motion.a>
             </div>
           </motion.div>

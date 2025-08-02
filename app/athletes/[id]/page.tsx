@@ -29,7 +29,7 @@ export default function AthleteProfile() {
       >
         <div className="flex flex-col items-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 mb-4"></div>
-          <span className="text-slate-300">Loading athlete profile...</span>
+          <span className="text-slate-300">{t("athleteProfile.loadingAthlete")}</span>
         </div>
       </motion.div>
     )
@@ -48,7 +48,7 @@ export default function AthleteProfile() {
           <div className="text-red-400 text-xl mb-4">Error: {error}</div>
           <Link href="/athletes">
             <Button className="bg-gradient-to-r from-purple-500 to-pink-500">
-              Back to Athletes
+              {t("athleteProfile.backToAthletes")}
             </Button>
           </Link>
         </div>
@@ -66,10 +66,10 @@ export default function AthleteProfile() {
         className="min-h-screen pt-20 bg-slate-900 flex items-center justify-center"
       >
         <div className="text-center">
-          <div className="text-slate-400 text-xl mb-4">Athlete not found</div>
+          <div className="text-slate-400 text-xl mb-4">{t("athleteProfile.athleteNotFound")}</div>
           <Link href="/athletes">
             <Button className="bg-gradient-to-r from-purple-500 to-pink-500">
-              Back to Athletes
+              {t("athleteProfile.backToAthletes")}
             </Button>
           </Link>
         </div>
@@ -93,7 +93,7 @@ export default function AthleteProfile() {
             className="flex items-center text-slate-400 hover:text-purple-400 transition-colors duration-200 mb-8"
           >
             <ArrowLeftIcon className="w-5 h-5 mr-2" />
-            Back to Athletes
+            {t("athleteProfile.backToAthletes")}
           </motion.button>
         </Link>
       </div>
@@ -134,7 +134,7 @@ export default function AthleteProfile() {
                 transition={{ delay: shouldReduceMotion ? 0 : 0.3 }}
                 className="text-2xl text-slate-300 mb-4 capitalize"
               >
-                {athlete.sport_category} Coach • {athlete.experience_level} Level
+                {athlete.sport_category} {t("athleteProfile.coach")} • {athlete.experience_level} {t("athleteProfile.level")}
               </motion.p>
 
               {/* Rating and Reviews */}
@@ -156,7 +156,7 @@ export default function AthleteProfile() {
                     />
                   ))}
                   <span className="ml-2 text-slate-300 text-lg">
-                    {athlete.rating}/5.0 ({athlete.total_reviews} reviews)
+                    {athlete.rating}/5.0 ({athlete.total_reviews} {t("athleteProfile.reviews")})
                   </span>
                 </div>
               </motion.div>
@@ -188,10 +188,10 @@ export default function AthleteProfile() {
                 className="flex flex-wrap gap-4"
               >
                 <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-lg px-8 py-3">
-                  Book Training Session
+                  {t("athleteProfile.bookTrainingSession")}
                 </Button>
                 <Button variant="outline" className="border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white text-lg px-8 py-3">
-                  Contact Athlete
+                  {t("athleteProfile.contactAthlete")}
                 </Button>
               </motion.div>
             </div>
@@ -214,7 +214,7 @@ export default function AthleteProfile() {
               >
                 <Card className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50">
                   <CardContent className="p-8">
-                    <h3 className="text-2xl font-bold mb-4 text-purple-400">About</h3>
+                    <h3 className="text-2xl font-bold mb-4 text-purple-400">{t("athleteProfile.about")}</h3>
                     <p className="text-slate-300 leading-relaxed">{athlete.bio}</p>
                   </CardContent>
                 </Card>
@@ -230,7 +230,7 @@ export default function AthleteProfile() {
                 >
                   <Card className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50">
                     <CardContent className="p-8">
-                      <h3 className="text-2xl font-bold mb-4 text-purple-400">Specializations</h3>
+                      <h3 className="text-2xl font-bold mb-4 text-purple-400">{t("athleteProfile.specialties")}</h3>
                       <div className="flex flex-wrap gap-3">
                         {athlete.specializations.split(',').map((spec, index) => (
                           <span
@@ -256,7 +256,7 @@ export default function AthleteProfile() {
                 >
                   <Card className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50">
                     <CardContent className="p-8">
-                      <h3 className="text-2xl font-bold mb-4 text-purple-400">Achievements</h3>
+                      <h3 className="text-2xl font-bold mb-4 text-purple-400">{t("athleteProfile.achievements")}</h3>
                       <p className="text-slate-300 leading-relaxed">{athlete.achievements}</p>
                     </CardContent>
                   </Card>
@@ -275,22 +275,22 @@ export default function AthleteProfile() {
               >
                 <Card className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50">
                   <CardContent className="p-8">
-                    <h3 className="text-2xl font-bold mb-6 text-purple-400">Contact Information</h3>
+                    <h3 className="text-2xl font-bold mb-6 text-purple-400">{t("athleteProfile.contactInformation")}</h3>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400">Location:</span>
+                        <span className="text-slate-400">{t("athleteProfile.location")}:</span>
                         <span className="text-white">{athlete.location}</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400">Phone:</span>
+                        <span className="text-slate-400">{t("athleteProfile.phone")}:</span>
                         <span className="text-white">{athlete.phone}</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400">Email:</span>
+                        <span className="text-slate-400">{t("athleteProfile.email")}:</span>
                         <span className="text-white">{athlete.email}</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400">Experience:</span>
+                        <span className="text-slate-400">{t("athleteProfile.experience")}:</span>
                         <span className="text-white capitalize">{athlete.experience_level}</span>
                       </div>
                     </div>
@@ -308,7 +308,7 @@ export default function AthleteProfile() {
                 >
                   <Card className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50">
                     <CardContent className="p-8">
-                      <h3 className="text-2xl font-bold mb-4 text-purple-400">Certifications</h3>
+                      <h3 className="text-2xl font-bold mb-4 text-purple-400">{t("athleteProfile.certifications")}</h3>
                       <p className="text-slate-300 leading-relaxed">{athlete.certifications}</p>
                     </CardContent>
                   </Card>
@@ -324,24 +324,24 @@ export default function AthleteProfile() {
               >
                 <Card className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50">
                   <CardContent className="p-8">
-                    <h3 className="text-2xl font-bold mb-6 text-purple-400">Statistics</h3>
+                    <h3 className="text-2xl font-bold mb-6 text-purple-400">{t("athleteProfile.statistics")}</h3>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400">Total Reviews:</span>
+                        <span className="text-slate-400">{t("athleteProfile.totalReviews")}:</span>
                         <span className="text-white font-semibold">{athlete.total_reviews}</span>
                       </div>
                       {athlete.total_bookings && (
                         <div className="flex items-center justify-between">
-                          <span className="text-slate-400">Total Bookings:</span>
+                          <span className="text-slate-400">{t("athleteProfile.totalBookings")}:</span>
                           <span className="text-white font-semibold">{athlete.total_bookings}</span>
                         </div>
                       )}
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400">Rating:</span>
+                        <span className="text-slate-400">{t("athleteProfile.rating")}:</span>
                         <span className="text-white font-semibold">{athlete.rating}/5.0</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400">Status:</span>
+                        <span className="text-slate-400">{t("athleteProfile.status")}:</span>
                         <span className={`font-semibold capitalize ${
                           athlete.status === 'active' ? 'text-green-400' : 'text-yellow-400'
                         }`}>

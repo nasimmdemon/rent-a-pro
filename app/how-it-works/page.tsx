@@ -25,98 +25,71 @@ export default function HowItWorksPage() {
   const steps = [
     {
       step: "01",
-      title: "Browse & Discover",
-      description: "Explore our diverse roster of elite athletes and coaches across various sports and specialties.",
+      title: t("howItWorks.step1.title"),
+      description: t("howItWorks.step1.description"),
       icon: <SearchIcon className="w-10 h-10" />,
       gradient: "from-blue-500 to-purple-500",
-      details: [
-        "Filter by sport, location, and price range",
-        "Read detailed athlete profiles and reviews",
-        "View availability and specializations",
-        "Compare different coaching styles",
-      ],
+      details: t("howItWorks.step1.details"),
     },
     {
       step: "02",
-      title: "Book Your Session",
-      description: "Schedule a session that fits your needs and availability with instant confirmation.",
+      title: t("howItWorks.step2.title"),
+      description: t("howItWorks.step2.description"),
       icon: <CalendarIcon className="w-10 h-10" />,
       gradient: "from-purple-500 to-pink-500",
-      details: [
-        "Real-time availability calendar",
-        "Flexible scheduling options",
-        "Secure payment processing",
-        "Instant booking confirmation",
-      ],
+      details: t("howItWorks.step2.details"),
     },
     {
       step: "03",
-      title: "Train & Improve",
-      description: "Achieve your goals with personalized guidance from world-class athletes.",
+      title: t("howItWorks.step3.title"),
+      description: t("howItWorks.step3.description"),
       icon: <PlayIcon className="w-10 h-10" />,
       gradient: "from-pink-500 to-red-500",
-      details: [
-        "One-on-one personalized training",
-        "Goal-oriented session planning",
-        "Progress tracking and feedback",
-        "Continuous skill development",
-      ],
+      details: t("howItWorks.step3.details"),
     },
   ]
 
   const features = [
     {
       icon: <ShieldCheckIcon className="w-8 h-8" />,
-      title: "Verified Athletes",
-      description: "All our trainers are verified professional athletes with proven track records and credentials.",
+      title: t("howItWorks.features.verifiedAthletes.title"),
+      description: t("howItWorks.features.verifiedAthletes.description"),
     },
     {
       icon: <ClockIcon className="w-8 h-8" />,
-      title: "Flexible Scheduling",
-      description: "Book sessions that fit your schedule with our easy-to-use calendar system.",
+      title: t("howItWorks.features.flexibleScheduling.title"),
+      description: t("howItWorks.features.flexibleScheduling.description"),
     },
     {
       icon: <CreditCardIcon className="w-8 h-8" />,
-      title: "Secure Payments",
-      description: "Safe and secure payment processing with multiple payment options available.",
+      title: t("howItWorks.features.securePayments.title"),
+      description: t("howItWorks.features.securePayments.description"),
     },
     {
       icon: <MessageSquareIcon className="w-8 h-8" />,
-      title: "Direct Communication",
-      description: "Chat directly with your trainer to discuss goals, preferences, and session details.",
+      title: t("howItWorks.features.directCommunication.title"),
+      description: t("howItWorks.features.directCommunication.description"),
     },
     {
       icon: <TrendingUpIcon className="w-8 h-8" />,
-      title: "Progress Tracking",
-      description: "Monitor your improvement with detailed progress reports and performance analytics.",
+      title: t("howItWorks.features.progressTracking.title"),
+      description: t("howItWorks.features.progressTracking.description"),
     },
     {
       icon: <AwardIcon className="w-8 h-8" />,
-      title: "Achievement System",
-      description: "Earn badges and achievements as you reach your fitness and skill milestones.",
+      title: t("howItWorks.features.achievementSystem.title"),
+      description: t("howItWorks.features.achievementSystem.description"),
     },
   ]
 
   const benefits = [
     {
-      title: "For Athletes & Fitness Enthusiasts",
-      items: [
-        "Access to world-class professional athletes",
-        "Personalized training programs",
-        "Flexible scheduling options",
-        "Progress tracking and analytics",
-        "Community support and motivation",
-      ],
+      title: t("howItWorks.benefits.forAthletes.title"),
+      items: t("howItWorks.benefits.forAthletes.items"),
     },
     {
-      title: "For Professional Athletes & Trainers",
-      items: [
-        "Expand your coaching reach globally",
-        "Set your own rates and schedule",
-        "Build your personal brand",
-        "Connect with motivated clients",
-        "Secure payment processing",
-      ],
+      title: t("howItWorks.benefits.forTrainers.title"),
+      items: t("howItWorks.benefits.forTrainers.items"),
     },
   ]
 
@@ -138,23 +111,23 @@ export default function HowItWorksPage() {
             className="text-center"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-              How Train a Pro Works
+              {t("howItWorks.title")}
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-              Connect with elite athletes in three simple steps and transform your training experience
+              {t("howItWorks.subtitle")}
             </p>
             <div className="flex items-center justify-center space-x-8 text-sm text-slate-400">
               <div className="flex items-center space-x-2">
                 <UserCheckIcon className="w-5 h-5 text-green-400" />
-                <span>500+ Verified Athletes</span>
+                <span>{t("howItWorks.stats.verifiedAthletes")}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <StarIcon className="w-5 h-5 text-yellow-400" />
-                <span>4.9 Average Rating</span>
+                <span>{t("howItWorks.stats.averageRating")}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <UsersIcon className="w-5 h-5 text-blue-400" />
-                <span>10K+ Sessions Completed</span>
+                <span>{t("howItWorks.stats.sessionsCompleted")}</span>
               </div>
             </div>
           </motion.div>
@@ -237,9 +210,9 @@ export default function HowItWorksPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Platform Features</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">{t("howItWorks.features.title")}</h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Everything you need for a seamless training experience
+              {t("howItWorks.features.subtitle")}
             </p>
           </motion.div>
 
@@ -282,9 +255,9 @@ export default function HowItWorksPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Benefits for Everyone</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">{t("howItWorks.benefits.title")}</h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Whether you're looking to train or teach, Train a Pro has something for you
+              {t("howItWorks.benefits.subtitle")}
             </p>
           </motion.div>
 
@@ -333,9 +306,9 @@ export default function HowItWorksPage() {
             whileInView="animate"
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Get Started?</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">{t("howItWorks.cta.title")}</h2>
             <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-              Join thousands of athletes who are already transforming their performance with Train a Pro
+              {t("howItWorks.cta.subtitle")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
@@ -344,7 +317,7 @@ export default function HowItWorksPage() {
                 whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
                 className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg hover:shadow-purple-500/25 transition-all duration-300 inline-flex items-center justify-center"
               >
-                Find Your Coach
+                {t("howItWorks.cta.findCoach")}
               </motion.a>
               <motion.a
                 href="/register-athlete"
@@ -352,7 +325,7 @@ export default function HowItWorksPage() {
                 whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
                 className="border-2 border-purple-500/50 text-purple-400 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-purple-500/10 transition-all duration-300 inline-flex items-center justify-center"
               >
-                Become a Trainer
+                {t("howItWorks.cta.becomeTrainer")}
               </motion.a>
             </div>
           </motion.div>

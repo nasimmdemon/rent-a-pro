@@ -97,10 +97,11 @@ export default function Navbar() {
               onClick={handleLanguageChange}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="text-slate-300 hover:text-purple-400 transition-colors duration-300 p-2 rounded-lg hover:bg-slate-800/50"
+              className="text-slate-300 hover:text-purple-400 transition-colors duration-300 p-2 rounded-lg hover:bg-slate-800/50 flex items-center space-x-2"
               aria-label={t("navbar.changeLanguage")}
             >
               <GlobeIcon className="w-4 h-4 xl:w-5 xl:h-5" />
+              <span className="text-xs font-medium">{language.toUpperCase()}</span>
             </motion.button>
           </div>
 
