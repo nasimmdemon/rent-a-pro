@@ -131,21 +131,21 @@ export default function RegisterAthletePage() {
     switch (currentStep) {
       case 1:
         // Personal Information validation
-        if (!formData.firstName?.trim()) missingFields.push("First Name")
-        if (!formData.lastName?.trim()) missingFields.push("Last Name")
-        if (!formData.email?.trim()) missingFields.push("Email")
-        if (!formData.phone?.trim()) missingFields.push("Phone")
-        if (!formData.city?.trim()) missingFields.push("City")
+        if (!formData.firstName?.trim()) missingFields.push(t("registerAthlete.validation.firstName"))
+        if (!formData.lastName?.trim()) missingFields.push(t("registerAthlete.validation.lastName"))
+        if (!formData.email?.trim()) missingFields.push(t("registerAthlete.validation.email"))
+        if (!formData.phone?.trim()) missingFields.push(t("registerAthlete.validation.phone"))
         break
       case 2:
         // Professional Details validation
-        if (!formData.sport_category?.trim()) missingFields.push("Sport Category")
-        if (!formData.experience_level?.trim()) missingFields.push("Experience Level")
-        if (!formData.hourlyRate?.trim()) missingFields.push("Hourly Rate")
+        if (!formData.city?.trim()) missingFields.push(t("registerAthlete.validation.city"))
+        if (!formData.sport_category?.trim()) missingFields.push(t("registerAthlete.validation.sportCategory"))
+        if (!formData.experience_level?.trim()) missingFields.push(t("registerAthlete.validation.experienceLevel"))
+        if (!formData.hourlyRate?.trim()) missingFields.push(t("registerAthlete.validation.hourlyRate"))
         break
       case 3:
         // Additional Information validation
-        if (!formData.bio?.trim()) missingFields.push("Bio")
+        if (!formData.bio?.trim()) missingFields.push(t("registerAthlete.validation.bio"))
         break
       case 4:
         // Review step - no validation needed
@@ -153,7 +153,7 @@ export default function RegisterAthletePage() {
     }
 
     if (missingFields.length > 0) {
-      alert(`Please fill in all required fields: ${missingFields.join(', ')}`)
+      alert(`${t("registerAthlete.validation.requiredFields")} ${missingFields.join(', ')}`)
       return
     }
 
@@ -304,7 +304,7 @@ export default function RegisterAthletePage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="firstName" className="text-slate-200">
-                        First Name *
+                        {t("registerAthlete.form.firstName")} *
                       </Label>
                       <div className="relative">
                         <UserIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
@@ -313,14 +313,14 @@ export default function RegisterAthletePage() {
                           type="text"
                           value={formData.firstName}
                           onChange={(e) => setFormData((prev) => ({ ...prev, firstName: e.target.value }))}
-                          placeholder="John"
+                          placeholder={t("registerAthlete.form.firstNamePlaceholder")}
                           className="pl-10 bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-purple-500"
                         />
                       </div>
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="lastName" className="text-slate-200">
-                        Last Name *
+                        {t("registerAthlete.form.lastName")} *
                       </Label>
                       <div className="relative">
                         <UserIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
@@ -329,7 +329,7 @@ export default function RegisterAthletePage() {
                           type="text"
                           value={formData.lastName}
                           onChange={(e) => setFormData((prev) => ({ ...prev, lastName: e.target.value }))}
-                          placeholder="Doe"
+                          placeholder={t("registerAthlete.form.lastNamePlaceholder")}
                           className="pl-10 bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-purple-500"
                         />
                       </div>
@@ -337,7 +337,7 @@ export default function RegisterAthletePage() {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email" className="text-slate-200">
-                      Email Address *
+                      {t("registerAthlete.form.email")} *
                     </Label>
                     <div className="relative">
                       <MailIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
@@ -346,14 +346,14 @@ export default function RegisterAthletePage() {
                         type="email"
                         value={formData.email}
                         onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
-                        placeholder="john@example.com"
+                        placeholder={t("registerAthlete.form.emailPlaceholder")}
                         className="pl-10 bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-purple-500"
                       />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone" className="text-slate-200">
-                      Phone Number *
+                      {t("registerAthlete.form.phone")} *
                     </Label>
                     <div className="relative">
                       <PhoneIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
@@ -362,7 +362,7 @@ export default function RegisterAthletePage() {
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => setFormData((prev) => ({ ...prev, phone: e.target.value }))}
-                        placeholder="+1 (555) 123-4567"
+                        placeholder={t("registerAthlete.form.phonePlaceholder")}
                         className="pl-10 bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-purple-500"
                       />
                     </div>
@@ -378,7 +378,7 @@ export default function RegisterAthletePage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="city" className="text-slate-200">
-                        Location
+                        {t("registerAthlete.form.city")}
                       </Label>
                       <div className="relative">
                         <MapPinIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
@@ -387,21 +387,21 @@ export default function RegisterAthletePage() {
                           type="text"
                           value={formData.city}
                           onChange={(e) => setFormData((prev) => ({ ...prev, city: e.target.value }))}
-                          placeholder="New York, NY"
+                          placeholder={t("registerAthlete.form.cityPlaceholder")}
                           className="pl-10 bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-purple-500"
                         />
                       </div>
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="hourlyRate" className="text-slate-200">
-                        Hourly Rate ($)
+                        {t("registerAthlete.form.hourlyRate")}
                       </Label>
                       <Input
                         id="hourlyRate"
                         type="number"
                         value={formData.hourlyRate}
                         onChange={(e) => setFormData((prev) => ({ ...prev, hourlyRate: e.target.value }))}
-                        placeholder="150"
+                        placeholder={t("registerAthlete.form.hourlyRatePlaceholder")}
                         className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-purple-500"
                       />
                     </div>
@@ -409,7 +409,7 @@ export default function RegisterAthletePage() {
 
                   <div className="space-y-2">
                     <Label htmlFor="sport_category" className="text-slate-200">
-                      Sport Category *
+                      {t("registerAthlete.form.sportCategory")} *
                     </Label>
                     <select
                       id="sport_category"
@@ -417,7 +417,7 @@ export default function RegisterAthletePage() {
                       onChange={(e) => setFormData((prev) => ({ ...prev, sport_category: e.target.value }))}
                       className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white focus:border-purple-500 focus:outline-none"
                     >
-                      <option value="">Select a sport</option>
+                      <option value="">{t("registerAthlete.form.selectSport")}</option>
                       {sportsOptions.map((sport) => (
                         <option key={sport} value={sport}>{sport}</option>
                       ))}
@@ -426,7 +426,7 @@ export default function RegisterAthletePage() {
 
                   <div className="space-y-2">
                     <Label htmlFor="experience_level" className="text-slate-200">
-                      Experience Level *
+                      {t("registerAthlete.form.experienceLevel")} *
                     </Label>
                     <select
                       id="experience_level"
@@ -442,13 +442,13 @@ export default function RegisterAthletePage() {
 
                   <div className="space-y-2">
                     <Label htmlFor="bio" className="text-slate-200">
-                      Biography *
+                      {t("registerAthlete.form.bio")} *
                     </Label>
                     <Textarea
                       id="bio"
                       value={formData.bio}
                       onChange={(e) => setFormData((prev) => ({ ...prev, bio: e.target.value }))}
-                      placeholder="Tell us about your experience, coaching philosophy, and what makes you unique..."
+                      placeholder={t("registerAthlete.form.bioPlaceholder")}
                       className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-purple-500 min-h-[120px]"
                     />
                   </div>
@@ -462,27 +462,27 @@ export default function RegisterAthletePage() {
                 <div className="space-y-6">
                   <div className="space-y-2">
                     <Label htmlFor="specializations" className="text-slate-200">
-                      Specializations
+                      {t("registerAthlete.form.specializations")}
                     </Label>
                     <Input
                       id="specializations"
                       type="text"
                       value={formData.specializations}
                       onChange={(e) => setFormData((prev) => ({ ...prev, specializations: e.target.value }))}
-                      placeholder="Youth training, Competitive play, Fitness (comma separated)"
+                      placeholder={t("registerAthlete.form.specializationsPlaceholder")}
                       className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-purple-500"
                     />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="certifications" className="text-slate-200">
-                      Certifications
+                      {t("registerAthlete.form.certifications")}
                     </Label>
                     <Textarea
                       id="certifications"
                       value={formData.certifications}
                       onChange={(e) => setFormData((prev) => ({ ...prev, certifications: e.target.value }))}
-                      placeholder="List your relevant certifications..."
+                      placeholder={t("registerAthlete.form.certificationsPlaceholder")}
                       className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-purple-500"
                       rows={3}
                     />
@@ -490,13 +490,13 @@ export default function RegisterAthletePage() {
 
                   <div className="space-y-2">
                     <Label htmlFor="achievements" className="text-slate-200">
-                      Achievements
+                      {t("registerAthlete.form.achievements")}
                     </Label>
                     <Textarea
                       id="achievements"
                       value={formData.achievements}
                       onChange={(e) => setFormData((prev) => ({ ...prev, achievements: e.target.value }))}
-                      placeholder="Notable achievements, awards, or accomplishments..."
+                      placeholder={t("registerAthlete.form.achievementsPlaceholder")}
                       className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-purple-500"
                       rows={3}
                     />
@@ -506,7 +506,7 @@ export default function RegisterAthletePage() {
                   <div className="space-y-4">
                     <div className="space-y-2">
                       <Label htmlFor="profile_picture" className="text-slate-200">
-                        Profile Picture
+                        {t("registerAthlete.form.profilePicture")}
                       </Label>
                       <div className="relative">
                         <UploadIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
@@ -518,12 +518,12 @@ export default function RegisterAthletePage() {
                           className="w-full pl-10 pr-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white file:bg-purple-500 file:text-white file:border-none file:rounded file:px-4 file:py-1 file:mr-4"
                         />
                       </div>
-                      <p className="text-xs text-slate-400">Upload a professional photo (JPG, PNG)</p>
+                      <p className="text-xs text-slate-400">{t("registerAthlete.form.profilePictureHelp")}</p>
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="attachments" className="text-slate-200">
-                        Certificates/Documents
+                        {t("registerAthlete.form.certificatesDocuments")}
                       </Label>
                       <div className="relative">
                         <UploadIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
@@ -536,7 +536,7 @@ export default function RegisterAthletePage() {
                           className="w-full pl-10 pr-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white file:bg-purple-500 file:text-white file:border-none file:rounded file:px-4 file:py-1 file:mr-4"
                         />
                       </div>
-                      <p className="text-xs text-slate-400">Upload certificates, references, or other documents</p>
+                      <p className="text-xs text-slate-400">{t("registerAthlete.form.documentsHelp")}</p>
                     </div>
                   </div>
                 </div>
