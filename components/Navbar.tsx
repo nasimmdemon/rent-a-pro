@@ -25,7 +25,6 @@ export default function Navbar() {
     { name: t("navbar.howItWorks"), href: "/how-it-works" },
     { name: t("navbar.aboutUs"), href: "/about" },
     { name: t("navbar.login"), href: "/login" },
-    { name: t("navbar.signup"), href: "/signup" },
     { name: t("navbar.becomeTrainer"), href: "/register-athlete" },
   ]
 

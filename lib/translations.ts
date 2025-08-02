@@ -350,6 +350,12 @@ export const translations = {
         advanced: "Advanced",
         professional: "Professional",
       },
+      success: {
+        title: "Application Submitted Successfully!",
+        description: "Thank you for your interest in becoming a trainer on our platform.",
+        reviewTime: "We will review your application and get back to you within 2-3 business days.",
+        submitAnother: "Submit Another Application",
+      },
     },
     booking: {
       title: "Book Your Session",
@@ -826,6 +832,12 @@ export const translations = {
         intermediate: "Fortgeschritten",
         advanced: "Erweitert",
         professional: "Professionell",
+      },
+      success: {
+        title: "Bewerbung erfolgreich eingereicht!",
+        description: "Vielen Dank für dein Interesse, Trainer auf unserer Plattform zu werden.",
+        reviewTime: "Wir werden deine Bewerbung prüfen und uns innerhalb von 2-3 Werktagen bei dir melden.",
+        submitAnother: "Weitere Bewerbung einreichen",
       },
     },
     booking: {

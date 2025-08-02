@@ -189,13 +189,13 @@ export default function RegisterAthletePage() {
                 <CheckIcon className="w-10 h-10 text-white" />
               </div>
               <h2 className="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                Application Submitted Successfully!
+                {t("registerAthlete.success.title")}
               </h2>
               <p className="text-lg text-slate-300 mb-6">
-                Thank you for your interest in becoming a trainer on our platform.
+                {t("registerAthlete.success.description")}
               </p>
               <p className="text-slate-400 mb-8">
-                We will review your application and get back to you within 2-3 business days.
+                {t("registerAthlete.success.reviewTime")}
               </p>
               <Button 
                 onClick={() => {
@@ -219,7 +219,7 @@ export default function RegisterAthletePage() {
                 }}
                 className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600"
               >
-                Submit Another Application
+                {t("registerAthlete.success.submitAnother")}
               </Button>
             </motion.div>
           </CardContent>
@@ -244,10 +244,10 @@ export default function RegisterAthletePage() {
             transition={{ delay: shouldReduceMotion ? 0 : 0.2 }}
           >
             <CardTitle className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-              Become a Trainer
+              {t("register.title")}
             </CardTitle>
             <CardDescription className="text-slate-300 mt-2">
-              Join our platform and share your expertise with athletes worldwide
+              {t("register.description")}
             </CardDescription>
           </motion.div>
 
@@ -299,7 +299,7 @@ export default function RegisterAthletePage() {
           >
             {currentStep === 1 && (
               <motion.div variants={shouldReduceMotion ? reducedMotionFadeIn : fadeInUp}>
-                <h2 className="text-2xl font-bold mb-6 text-center">Personal Information</h2>
+                <h2 className="text-2xl font-bold mb-6 text-center">{t("register.personalInfo")}</h2>
                 <div className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
@@ -373,7 +373,7 @@ export default function RegisterAthletePage() {
 
             {currentStep === 2 && (
               <motion.div variants={shouldReduceMotion ? reducedMotionFadeIn : fadeInUp}>
-                <h2 className="text-2xl font-bold mb-6 text-center">Professional Details</h2>
+                <h2 className="text-2xl font-bold mb-6 text-center">{t("registerAthlete.steps.step2")}</h2>
                 <div className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
@@ -458,7 +458,7 @@ export default function RegisterAthletePage() {
 
             {currentStep === 3 && (
               <motion.div variants={shouldReduceMotion ? reducedMotionFadeIn : fadeInUp}>
-                <h2 className="text-2xl font-bold mb-6 text-center">Additional Information</h2>
+                <h2 className="text-2xl font-bold mb-6 text-center">{t("registerAthlete.steps.step3")}</h2>
                 <div className="space-y-6">
                   <div className="space-y-2">
                     <Label htmlFor="specializations" className="text-slate-200">
@@ -545,9 +545,9 @@ export default function RegisterAthletePage() {
 
             {currentStep === 4 && (
               <motion.div variants={shouldReduceMotion ? reducedMotionFadeIn : fadeInUp}>
-                <h2 className="text-2xl font-bold mb-6 text-center">Review & Submit</h2>
+                <h2 className="text-2xl font-bold mb-6 text-center">{t("registerAthlete.steps.step4")}</h2>
                 <div className="bg-slate-800/80 rounded-2xl p-6 border border-slate-700 space-y-6">
-                  <h3 className="text-xl font-semibold mb-4 text-purple-400">Application Summary</h3>
+                                      <h3 className="text-xl font-semibold mb-4 text-purple-400">{t("register.applicationSummary")}</h3>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                     <div>
@@ -608,7 +608,7 @@ export default function RegisterAthletePage() {
                   className="flex items-center space-x-2 border-slate-600 text-slate-300 hover:border-slate-500 hover:bg-slate-800 bg-transparent"
                 >
                   <ArrowLeftIcon className="w-4 h-4" />
-                  <span>Back</span>
+                  <span>{t("common.back")}</span>
                 </Button>
               )}
 
@@ -619,7 +619,7 @@ export default function RegisterAthletePage() {
                     onClick={nextStep}
                     className="flex items-center space-x-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600"
                   >
-                    <span>Continue</span>
+                    <span>{t("common.continue")}</span>
                     <ArrowRightIcon className="w-4 h-4" />
                   </Button>
                 ) : (
@@ -631,10 +631,10 @@ export default function RegisterAthletePage() {
                     {loading ? (
                       <div className="flex items-center">
                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                        Submitting...
+                        {t("common.loading")}...
                       </div>
                     ) : (
-                      "Submit Application"
+                      t("register.submitApplication")
                     )}
                   </Button>
                 )}
