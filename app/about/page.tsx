@@ -218,7 +218,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Journey */}
-      <section className="py-24">
+      {/*<section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={shouldReduceMotion ? reducedMotionFadeIn : fadeInUp}
@@ -235,7 +235,7 @@ export default function AboutPage() {
 
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-purple-500 to-pink-500" />
+         {/*   <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-purple-500 to-pink-500" />
 
             <motion.div
               variants={shouldReduceMotion ? reducedMotionFadeIn : staggerContainer}
@@ -262,20 +262,20 @@ export default function AboutPage() {
                   </div>
 
                   {/* Timeline Dot */}
-                  <div className="relative z-10">
+                  {/* <div className="relative z-10">
                     <div className="w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full border-4 border-slate-900" />
-                  </div>
+                  </div> */}
 
-                  <div className="w-1/2" />
-                </motion.div>
-              ))}
+                  {/* <div className="w-1/2" />
+                </motion.div> */}
+              {/* ))}
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Our Team */}
-      <section className="py-24 bg-slate-800/30">
+      {/* <section className="py-24 bg-slate-800/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={shouldReduceMotion ? reducedMotionFadeIn : fadeInUp}
@@ -328,7 +328,7 @@ export default function AboutPage() {
             ))}
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-r from-purple-500/10 to-pink-500/10">
